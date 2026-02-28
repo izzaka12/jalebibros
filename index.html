@@ -299,6 +299,7 @@
   .service-icon {
     font-size: 2rem;
     margin-bottom: 1rem;
+    color: var(--deep-orange);
   }
 
   .service-title {
@@ -358,7 +359,6 @@
     color: var(--warm-brown);
     font-weight: 300;
     margin-bottom: 2rem;
-    max-width: 680px;
   }
 
   .case-stats {
@@ -421,6 +421,8 @@
     font-weight: 500;
     font-size: 1rem;
     transition: all 0.25s;
+    border: none;
+    cursor: pointer;
   }
 
   .contact-email:hover {
@@ -458,7 +460,8 @@
     .hero { padding: 7rem 1.5rem 3rem; }
     .about-grid { grid-template-columns: 1fr; gap: 2rem; }
     .services-grid { grid-template-columns: 1fr; }
-    .case-stats { gap: 1.5rem; }
+    .case-study-card { grid-template-columns: 1fr; }
+    .case-stats { grid-column: 1; grid-row: auto; flex-direction: row; flex-wrap: wrap; gap: 1.5rem; }
     footer { padding: 1.5rem; flex-direction: column; gap: 0.5rem; text-align: center; }
   }
 </style>
@@ -487,7 +490,7 @@
       return "M "+pts.join(" L ");
     }
     var path=document.createElementNS("http://www.w3.org/2000/svg","path");
-    path.setAttribute("d",generateSpiral(50,50,3.2,36,500));
+    path.setAttribute("d",generateSpiral(50,50,3.2,36,200));
     path.setAttribute("fill","none");
     path.setAttribute("stroke","#FDF6EC");
     path.setAttribute("stroke-width","5.5");
@@ -533,18 +536,18 @@
             <div class="team-role">Strategic Finance & FP&A</div>
           </div>
         </div>
-          <div class="team-bio">9 years of finance experience. 7+ years building financial infrastructure at Uber across multimillion and billion dollar portfolios. Expert in financial modeling, process automation, P&L management, and turning complex financial data into clear decisions.</div>
-   </div>
-     <div class="team-card">
-  <div style="display:flex;align-items:center;gap:1rem;margin-bottom:0.75rem;">
-    <img src="JD.jpeg" style="width:60px;height:60px;border-radius:50%;object-fit:cover;flex-shrink:0;border:3px solid rgba(244,166,29,0.3);">
-    <div>
-      <div class="team-name" style="margin-bottom:0.1rem;">JD aka The Other Jalebi Bro</div>
-      <div class="team-role">Operations & Technical Quality</div>
-    </div>
-  </div>
-  <div class="team-bio">13+ years of industry experience. Deep expertise in technical quality and supply chain operations at Apple and Meta. Expert in operational systems, quality frameworks, and making complex processes run smoothly at scale.</div>
-</div>
+        <div class="team-bio">9 years of finance experience. 7+ years building financial infrastructure at Uber across multimillion and billion dollar portfolios. Expert in financial modeling, process automation, P&L management, and turning complex financial data into clear decisions.</div>
+      </div>
+      <div class="team-card">
+        <div style="display:flex;align-items:center;gap:1rem;margin-bottom:0.75rem;">
+          <img src="JD.jpeg" style="width:60px;height:60px;border-radius:50%;object-fit:cover;flex-shrink:0;border:3px solid rgba(244,166,29,0.3);">
+          <div>
+            <div class="team-name" style="margin-bottom:0.1rem;">JD aka The Other Jalebi Bro</div>
+            <div class="team-role">Operations & Technical Quality</div>
+          </div>
+        </div>
+        <div class="team-bio">13+ years of industry experience. Deep expertise in technical quality and supply chain operations at Apple and Meta. Expert in operational systems, quality frameworks, and making complex processes run smoothly at scale.</div>
+      </div>
     </div>
   </div>
 </section>
@@ -555,22 +558,22 @@
   <div class="section-title">We build things that<br>didn't exist before.</div>
   <div class="services-grid">
     <div class="service-card">
-      <div class="service-icon">📊</div>
+      <div class="service-icon">🔍</div>
       <div class="service-title">FP&A & Financial Modeling</div>
       <div class="service-desc">From scratch financial models, forecasting frameworks, and planning cycles that give you real visibility into your business — not just spreadsheets that look good.</div>
     </div>
     <div class="service-card">
-      <div class="service-icon">⚙️</div>
+      <div class="service-icon">⚡</div>
       <div class="service-title">Process Automation & Systems</div>
       <div class="service-desc">We identify the manual, error-prone processes eating your team's time and revenue, then build automated systems that just work.</div>
     </div>
     <div class="service-card">
-      <div class="service-icon">🧭</div>
+      <div class="service-icon">♟️</div>
       <div class="service-title">Strategic Finance Advisory</div>
       <div class="service-desc">A thought partner for your financial strategy — cost structure, unit economics, P&L design, and the analytical frameworks that guide smart decisions.</div>
     </div>
     <div class="service-card">
-      <div class="service-icon">🏦</div>
+      <div class="service-icon">🤝</div>
       <div class="service-title">Fractional CFO</div>
       <div class="service-desc">Senior finance leadership without the full-time cost. We plug into your team, own the finance function, and scale with you as you grow.</div>
     </div>
@@ -607,28 +610,33 @@
   <div class="section-label">Get in touch</div>
   <div class="section-title">Ready to untangle<br>something?</div>
   <p class="contact-sub">Whether you need a financial model, a process overhaul, or just want to talk through a problem — we're here for it.</p>
-  <a href="/cdn-cgi/l/email-protection#fdb487879c969ccccfbd9a909c9491d39e9290" class="contact-email">✉ <span class="__cf_email__" data-cfemail="41083b3b202a20707301262c20282d6f222e2c">[email&#160;protected]</span></a>
+  <button class="contact-email" onclick="this.innerText='✉ hello@jalebibros.com';">✉ Click to reveal email</button>
 </section>
 
 <footer>
- <div class="footer-logo" style="display:flex;align-items:center;gap:8px;">
-  <svg id="footer-spiral" width="24" height="24" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-    <circle cx="50" cy="50" r="46" fill="#F4A61D"/>
-  </svg>
-  Jalebi Bros
-</div>
-<script>
-(function(){
-  var svg=document.getElementById("footer-spiral");
-  function generateSpiral(cx,cy,turns,maxR,steps){
-    var pts=[];var total=turns*2*Math.PI;
-    for(var i=0;i<=steps;i++){var t=i/steps;var angle=-Math.PI/2+t*total;var r=1+t*maxR;pts.push((cx+r*Math.cos(angle)).toFixed(2)+","+(cy+r*Math.sin(angle)).toFixed(2));}
-    return "M "+pts.join(" L ");
-  }
-  var path=document.createElementNS("http://www.w3.org/2000/svg","path");
-  path.setAttribute("d",generateSpiral(50,50,3.2,36,500));
-  path.setAttribute("fill","none");path.setAttribute("stroke","#FDF6EC");
-  path.setAttribute("stroke-width","5.5");path.setAttribute("stroke-linecap","round");
-  svg.appendChild(path);
-})();
-</script>
+  <div class="footer-logo" style="display:flex;align-items:center;gap:8px;">
+    <svg id="footer-spiral" width="24" height="24" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="50" cy="50" r="46" fill="#F4A61D"/>
+    </svg>
+    Jalebi Bros
+  </div>
+  <script>
+  (function(){
+    var svg=document.getElementById("footer-spiral");
+    function generateSpiral(cx,cy,turns,maxR,steps){
+      var pts=[];var total=turns*2*Math.PI;
+      for(var i=0;i<=steps;i++){var t=i/steps;var angle=-Math.PI/2+t*total;var r=1+t*maxR;pts.push((cx+r*Math.cos(angle)).toFixed(2)+","+(cy+r*Math.sin(angle)).toFixed(2));}
+      return "M "+pts.join(" L ");
+    }
+    var path=document.createElementNS("http://www.w3.org/2000/svg","path");
+    path.setAttribute("d",generateSpiral(50,50,3.2,36,200));
+    path.setAttribute("fill","none");path.setAttribute("stroke","#FDF6EC");
+    path.setAttribute("stroke-width","5.5");path.setAttribute("stroke-linecap","round");
+    svg.appendChild(path);
+  })();
+  </script>
+  <div class="footer-copy">© 2026 Jalebi Bros Consulting. All rights reserved.</div>
+</footer>
+
+</body>
+</html>
