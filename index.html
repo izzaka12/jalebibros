@@ -601,4 +601,24 @@
 </section>
 
 <footer>
-  <div class="footer-logo">Jalebi Bros
+ <div class="footer-logo" style="display:flex;align-items:center;gap:8px;">
+  <svg id="footer-spiral" width="24" height="24" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+    <circle cx="50" cy="50" r="46" fill="#E8530A"/>
+  </svg>
+  Jalebi Bros
+</div>
+<script>
+(function(){
+  var svg=document.getElementById("footer-spiral");
+  function generateSpiral(cx,cy,turns,maxR,steps){
+    var pts=[];var total=turns*2*Math.PI;
+    for(var i=0;i<=steps;i++){var t=i/steps;var angle=-Math.PI/2+t*total;var r=1+t*maxR;pts.push((cx+r*Math.cos(angle)).toFixed(2)+","+(cy+r*Math.sin(angle)).toFixed(2));}
+    return "M "+pts.join(" L ");
+  }
+  var path=document.createElementNS("http://www.w3.org/2000/svg","path");
+  path.setAttribute("d",generateSpiral(50,50,3.2,36,500));
+  path.setAttribute("fill","none");path.setAttribute("stroke","#FDF6EC");
+  path.setAttribute("stroke-width","5.5");path.setAttribute("stroke-linecap","round");
+  svg.appendChild(path);
+})();
+</script>
